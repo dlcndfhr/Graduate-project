@@ -1,0 +1,15 @@
+import winsound // winsound -> thread 사용필요
+def main():
+    so1 = {'do': 261, 're': 293, 'mi': 329, 'pa': 349, 'sol': 391, 'ra': 440, 'si': 493}
+    mel = ['do','mi','mi', 'mi','sol','sol', 're','pa','pa','ra','si','si']
+    dur = [4,4,2, 4,4,2, 4,4,2, 4,4,2]
+    mel2 = ['sol','do','ra','pa','mi','do','re']
+    dur2 = [1,1,1,1,1,1,1]
+    music = zip(mel,dur)
+    music2 = zip(mel2, dur2)
+    for melody,duration in music:
+        winsound.Beep(so1[melody],1000//duration)
+    for melody,duration in music2:
+        winsound.Beep(so1[melody],1000//duration)
+if __name__ == '__main__':
+    main()
